@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO</title>
+</head>
+
+<body>
+    <script>
+        // Creer un obj JS
+        let obj = {
+            // declarer des variable dans l'object
+            int: 45,
+            str: 'Une string',
+            // declarer une function dans objet
+            affiche: function() {
+                console.log(this.int + " " + this.str);
+            }
+        };
+        //EXER 1
+        console.log('EXO 1');
+        // faire une copi de l'objet 1 
+        let obj2 = Object.create(obj);
+        console.log(obj.affiche());
+        console.log(obj2.affiche());
+
+        //EXER 2
+        console.log('EXO 2');
+        // faire une copi modifier de l'objet 2
+        let obj3 = Object.create(obj2);
+        obj3.int = 33;
+        obj3.str = 'une autre string';
+        console.log(obj.affiche());
+        console.log(obj2.affiche());
+        console.log(obj3.affiche());
+
+        //EXER 3
+        console.log('EXO 3');
+        // Nouvelle obj avec un init pour les copi des cet obj (__construct en php)
+        let objet = {
+                int: '',
+                str: '',
+                affiche: function() {
+                    return this.int + " " + this.str;
+                },
+                init: function() {
+                    this.int = prompt('Tapez un nombre');
+                    this.str = prompt('Tapez une string');
+                }
+            }
+            //EXO 4
+        console.log('EXO 4');
+        // creer un objet2 a partir de objet
+        let objet2 = Object.create(objet);
+        objet2.init();
+        console.log(objet2.affiche());
+    </script>
+</body>
+
+</html>
