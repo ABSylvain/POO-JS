@@ -46,7 +46,9 @@
                 affiche: function() {
                     return this.int + " " + this.str;
                 },
+                // une function init pour prendre de nouvelle value avec un prompt()
                 init: function() {
+                    // this refere a l'objet parent ici 'objet'
                     this.int = prompt('Tapez un nombre');
                     this.str = prompt('Tapez une string');
                 }
@@ -55,7 +57,10 @@
         console.log('EXO 4');
         // creer un objet2 a partir de objet
         let objet2 = Object.create(objet);
+        // on lance init() de objet2 
+        //dans le init 'this' refere a objet2
         objet2.init();
+        // on affiche se que return le la function affiche()
         console.log(objet2.affiche());
     </script>
 </body>
